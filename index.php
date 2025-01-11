@@ -33,32 +33,40 @@ function calculate($expression)
 function multiply($expression)
 {
   $numbers = explode('*', $expression);
-  $number1 = trim($numbers[0]);
-  $number2 = trim($numbers[1]);
-  return (float)$number1 * (float)$number2;
+  $result = 1;
+  foreach ($numbers as $number) {
+    $result *= (float)trim($number);
+  }
+  return $result;
 }
 
 function addition($expression)
 {
   $numbers = explode('+', $expression);
-  $number1 = trim($numbers[0]);
-  $number2 = trim($numbers[1]);
-  return (float)$number1 + (float)$number2;
+  $result = 0;
+  foreach ($numbers as $number) {
+    $result += (float)trim($number);
+  }
+  return $result;
 }
 
 function subtraction($expression)
 {
   $numbers = explode('-', $expression);
-  $number1 = trim($numbers[0]);
-  $number2 = trim($numbers[1]);
-  return (float)$number1 - (float)$number2;
+  $result = 0;
+  foreach ($numbers as $number) {
+    $result -= (float)trim($number);
+  }
+  return $result;
 }
 
 function division($expression)
 {
   $numbers = explode('/', $expression);
-  $number1 = trim($numbers[0]);
-  $number2 = trim($numbers[1]);
-  return (float)$number1 / (float)$number2;
+  $result = 1;
+  foreach ($numbers as $number) {
+    $result /= (float)trim($number);
+  }
+  return $result;
 }
 ?>
